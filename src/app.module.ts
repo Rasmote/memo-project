@@ -9,16 +9,20 @@ import { MemoEntity } from './entity/memo.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '127.0.0.1',
-      port: 3307,
-      username: 'root',
+      host: '113.198.230.24',
+      port: 1032,
+      username: 'sinhyeok',
       password: 'sinhyeok',
       database: 'memoDB',
       entities: [MemoEntity],
       synchronize: true,
+      logging: true,
     }),
+
     MemoModule],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule { }
+
+//해야할일 : 포트포워딩 2개
