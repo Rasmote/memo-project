@@ -1,6 +1,6 @@
 import { Controller, Post, Get, Body, Query } from '@nestjs/common';
 import { MemoService } from './memo.service';
-import { CreateMemoDto, UpdateMemoDto } from 'src/dto/memo.dto';
+import { CreateMemoDto, DeleteMemoDto, ReadMemoDto, UpdateMemoDto } from 'src/dto/memo.dto';
 
 @Controller('memo')
 export class MemoController {
@@ -12,8 +12,8 @@ export class MemoController {
     }
 
     @Get('read')
-    async read(@Query('num') num: number) {
-        return this.memoService.readMemo(num);
+    async read(@Query() body: ReadMemoDto) {
+        return this.memoService.readMemo(body);
     }
 
     @Post('update')
@@ -22,8 +22,8 @@ export class MemoController {
     }
 
     @Get('delete')
-    async delete(@Query('num') num: number) {
-        return this.memoService.deleteMemo(num);
+    async delete(@Query() body: DeleteMemoDto) {
+        return this.memoService.deleteMemo(body);
     }
 
     @Get('/show')

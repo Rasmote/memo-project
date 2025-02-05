@@ -1,25 +1,30 @@
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsNumberString, IsString } from "class-validator";
 
 export class CreateMemoDto {
-    @IsNotEmpty()
     @IsString()
     title: string;
 
-    @IsNotEmpty()
     @IsString()
     content: string;
 }
 
 export class UpdateMemoDto {
-    @IsNotEmpty()
     @IsNumber()
     num: number;
 
-    @IsNotEmpty()
     @IsString()
     title: string;
 
-    @IsNotEmpty()
     @IsString()
     content: string;
+}
+
+export class ReadMemoDto {
+    @IsNumberString()
+    num: number;
+}
+
+export class DeleteMemoDto {
+    @IsNumberString()
+    num: number;
 }

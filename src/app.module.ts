@@ -24,5 +24,3 @@ import { MemoEntity } from './entity/memo.entity';
   providers: [AppService],
 })
 export class AppModule { }
-
-//해야할일 : 포트포워딩 2개
